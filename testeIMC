@@ -1,0 +1,24 @@
+import 'dart:io';
+
+void main() {
+  print("Digite seu nome:");
+  String? nome = stdin.readLineSync();
+  
+  print("Digite seu idade:");
+  String? idade = stdin.readLineSync();
+  
+  print("Digite seu peso:");
+  String? peso = stdin.readLineSync();
+  
+  print("Digite seu altura:");
+  String? altura = stdin.readLineSync();
+  
+  if (peso != null && altura != null) {
+    int peso2 = int.parse(peso);
+    double altura2 = double.parse(altura);
+    double IMC = peso2 / (altura2 * altura2);
+    var IMC2 = IMC.toStringAsFixed(2);
+    print("$nome, $idade anos, seu IMC eh $IMC2.");
+
+  }
+}
