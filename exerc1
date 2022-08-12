@@ -1,0 +1,22 @@
+/*1 - Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma 
+mensagem que diga se ela poderá ou não votar este ano (não é necessário 
+considerar o mês em que a pessoa nasceu).*/
+
+import 'dart:io';
+
+void main() {
+  print("Digite seu ano de nascimento (0000):");
+  String? ano = stdin.readLineSync();
+
+  if (ano != null) {
+    int ano3 = 2022;
+    int ano2 = int.parse(ano);
+    int result = ano3 - ano2;
+    if (result > 15) {
+      print("Voce possui $result anos.");
+      print("Voce pode votar este ano.");
+    } else {
+      print("Voce ainda nao pode votar.");
+    }
+  }
+}
