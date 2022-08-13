@@ -1,0 +1,52 @@
+/* 2 - Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+Álcool:
+. até 20 litros, desconto de 3% por litro Álcool
+. acima de 20 litros, desconto de 5% por litro
+Gasolina:
+. até 20 litros, desconto de 4% por litro Gasolina
+. acima de 20 litros, desconto de 6% por litro
+
+Escreva um algoritmo que leia o número de litros vendidos e o tipo de combustível (codificado
+da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente
+sabendo-se que o preço do litro da gasolina é R$ 5,30 e o preço do litro do álcool é R$ 4,90. */
+
+import 'dart:io';
+
+void main() {
+  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  print("%% Bem vindo ao Posto do Lima %%");
+  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  print("");
+
+  print("Digite A para abastecer com Alcool ou G para abastecer com Gasolina.");
+  var opcaomenu = stdin.readLineSync();
+  //print("Deseja abastecer quantos litros?");
+  var litros = 21;
+
+  if (opcaomenu == 'A') {
+    if (litros <= 20) {
+      double alcool = litros * (4.90 - (4.90 * 0.03));
+      String alcool2 = alcool.toStringAsFixed(2);
+      print("Voce abasteceu $litros litros.");
+      print("O valor pago sera de $alcool2 Reais.");
+    } else {
+      double alcool = litros * (4.90 - (4.90 * 0.05));
+      String alcool2 = alcool.toStringAsFixed(2);
+      print("Voce abasteceu $litros litros.");
+      print("O valor pago sera de $alcool2 Reais.");
+    }
+  }
+  if (opcaomenu == 'G') {
+    if (litros <= 20) {
+      double gas = litros * (5.30 - (5.30 * 0.04));
+      String gas2 = gas.toStringAsFixed(2);
+      print("Voce abasteceu $litros litros.");
+      print("O valor pago sera de $gas2 Reais.");
+    } else {
+      double gas = litros * (5.30 - (5.30 * 0.06));
+      String gas2 = gas.toStringAsFixed(2);
+      print("Voce abasteceu $litros litros.");
+      print("O valor pago sera de $gas2 Reais.");
+    }
+  }
+}
