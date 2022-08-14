@@ -1,0 +1,30 @@
+3 - Faça um algoritmo para ler: a descrição do produto (nome), a quantidade adquirida e o
+preço unitário. Calcular e escrever o total (total = quantidade adquirida * preço unitário), o
+desconto e o total a pagar (total a pagar = total - desconto), sabendo-se que:
+- Se quantidade <= 5 o desconto será de 2%
+- Se quantidade > 5 e quantidade <=10 o desconto será de 3%
+- Se quantidade > 10 o desconto será de 5%......
+
+void main() {
+  String nameproduct = "Bolacha";
+  int qntd = 24;
+  double preco = 1.90;
+
+  print(
+      "Voce esta comprando $nameproduct, ao levar de 1 a 5, tem 2% de desconto;");
+  print("Ao levar de 6 a 10, sao 3%; e acima de 11, 5% em cada $nameproduct.");
+  double total = qntd * preco;
+  if (total <= 5) {
+    double pgmt = qntd * (preco - (preco * 0.02));
+    String pgmt2 = pgmt.toStringAsFixed(2);
+    print("Voce obteve 2% de desconto. Total a pagar = $pgmt2 Reais.");
+  } else if (total > 5 && total <= 10) {
+    double pgmt = qntd * (preco - (preco * 0.03));
+    String pgmt2 = pgmt.toStringAsFixed(2);
+    print("Voce obteve 3% de desconto. Total a pagar = $pgmt2 Reais.");
+  } else {
+    double pgmt = qntd * (preco - (preco * 0.05));
+    String pgmt2 = pgmt.toStringAsFixed(2);
+    print("Voce obteve 5% de desconto. Total pago = $pgmt2 Reais.");
+  }
+}
